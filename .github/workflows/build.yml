@@ -8,6 +8,8 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -38,6 +40,11 @@ jobs:
 
       - name: Build application
         run: npm run tauri build
+
+      - name: List build output (debug)
+        run: |
+          echo "Checking build outputs:"
+          ls -R src-tauri/target/release/bundle/ || echo "No bundle directory found"
 
       - name: Upload macOS DMG
         if: matrix.platform == 'macos-latest'
