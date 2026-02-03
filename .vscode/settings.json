@@ -1,0 +1,14 @@
+{
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "tailwindCSS.lint.invalidTailwindDirective": "ignore",
+  "tailwindCSS.experimental.classRegex": [],
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
+  "css.lint.unknownAtRules": "ignore",
+  "css.customData": [".vscode/tailwind.json"],
+  "eslint.rules.customizations": [
+    {
+      "rule": "react-compiler/react-compiler",
+      "severity": "off"
+    }
+  ]
+}
