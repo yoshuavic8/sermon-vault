@@ -2,11 +2,22 @@
 
 ## macOS Installation
 
+### Easy Installation (Recommended)
+
+1. Download the `.dmg` file and `install-macos.sh` from [Releases](https://github.com/yoshuavic8/sermon-vault/releases)
+2. Open Terminal and run:
+```bash
+cd ~/Downloads
+bash install-macos.sh
+```
+3. The script will automatically fix permissions and open the app
+
 ### If you get "damaged and can't be opened" error:
 
 This happens because the app is not signed with an Apple Developer Certificate. To fix:
 
 **Option 1: Remove quarantine attribute (Recommended)**
+
 ```bash
 # For DMG file:
 xattr -cr ~/Downloads/Sermon\ Vault*.dmg
@@ -16,17 +27,20 @@ xattr -cr "/Applications/Sermon Vault.app"
 ```
 
 **Option 2: Via System Settings**
+
 1. Open System Settings → Privacy & Security
 2. Scroll down to "Security" section
 3. Click "Open Anyway" next to the blocked app
 4. Confirm by clicking "Open"
 
 **Option 3: Allow apps from anywhere (Less secure)**
+
 ```bash
 sudo spctl --master-disable
 ```
 
 ### Normal Installation
+
 1. Download the `.dmg` file from [Releases](https://github.com/yoshuavic8/sermon-vault/releases)
 2. Open the DMG file
 3. Drag "Sermon Vault" to Applications folder
@@ -46,6 +60,7 @@ sudo spctl --master-disable
 To distribute signed builds, you need:
 
 ### macOS Code Signing
+
 1. Enroll in Apple Developer Program ($99/year)
 2. Generate certificates in Xcode
 3. Export certificates and add to GitHub Secrets:
@@ -57,6 +72,7 @@ To distribute signed builds, you need:
    - `APPLE_TEAM_ID`
 
 ### Windows Code Signing
+
 1. Purchase code signing certificate
 2. Add to GitHub Secrets:
    - `WINDOWS_CERTIFICATE`
@@ -72,11 +88,13 @@ To distribute signed builds, you need:
 ## System Requirements
 
 ### macOS
+
 - macOS 10.15 (Catalina) or later
 - 64-bit processor
 - 100MB disk space
 
 ### Windows
+
 - Windows 10 or later
 - 64-bit processor
 - 100MB disk space
@@ -85,15 +103,19 @@ To distribute signed builds, you need:
 ## Troubleshooting
 
 ### macOS: "App is damaged"
+
 See macOS Installation section above.
 
 ### Windows: SmartScreen warning
+
 Click "More info" → "Run anyway"
 
 ### Can't find vault folder
+
 Make sure you have read/write permissions to the selected folder.
 
 ### Sermons not appearing
+
 1. Go to Settings
 2. Re-select vault folder
 3. Wait for indexing to complete
